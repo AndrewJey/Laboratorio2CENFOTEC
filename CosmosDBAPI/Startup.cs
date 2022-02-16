@@ -35,6 +35,7 @@ namespace CosmosDBAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiCosmosDB", Version = "v1" });
             });
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
         }
         //Agregar Tareas de Cosmos
         private static async Task<CosmosDBService> InitializeCosmosClientInstanceAsync(IConfigurationSection configurationSection)
